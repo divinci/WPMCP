@@ -43,3 +43,12 @@ Several authentication approaches can be used with the WordPress REST API:
 
 Depending on your environment you can pick whichever method suits your security and automation needs.
 
+## Usage
+
+```python
+from wpmcp.client import WordPressClient
+
+client = WordPressClient("https://example.com/wp-json")
+posts = client.get("wp/v2/posts")
+print(posts)
+```
