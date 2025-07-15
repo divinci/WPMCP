@@ -1,1 +1,4 @@
 # Requirements for Python 3.12 or later
+fastapi
+uvicorn
+requests

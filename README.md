@@ -29,6 +29,25 @@ python3 -m pip install -r requirements.txt
 
 Once these steps are complete you will be ready to run the MCP server (implementation forthcoming).
 
+## Running the server
+
+The server is implemented with **FastAPI**. Set the following environment variables
+before starting:
+
+```
+WP_BASE_URL=<https://your-wordpress-site>
+WP_API_KEY=<your-api-key>
+```
+
+Install dependencies as shown above and run:
+
+```bash
+uvicorn wpmcp.server:app --reload
+```
+
+This starts the MCP server locally. Endpoints such as `POST /posts` will create
+posts on the configured WordPress instance using the API key for authentication.
+
 ## WordPress REST API overview
 
 WordPress exposes most administrative functionality through its REST API at `/wp-json/wp/v2/`. It supports actions like retrieving posts, managing users and installing plugins. For this MCP server, the API will be leveraged to perform administrative tasks automatically.
